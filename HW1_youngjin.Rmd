@@ -1,0 +1,87 @@
+---
+title: "HW1_youngjin"
+author: "Youngjin Cho"
+date: '2020 8 28 '
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem 1
+I finished both Visualization Basics and Programming Basics in "The Basics" of the "RStudio Primers".
+
+# Problem 2
+
+## Part A
+The following are parts of course objectives listed in the beginning of lecture 1.
+
+\begin{itemize}
+  \item R programming
+  \item Reproducible research concepts
+  \item Good programming practices
+\end{itemize}
+
+## Part B
+The following are exponential, gamma, and normal distribution from Appendix in "Statistical Inference" written by Cassella & Berger.
+
+### Exponential Distribution
+
+\begin{eqnarray}
+f(X=x|\beta) &=& \frac{1}{\beta} e^{-\frac{x}{\beta}} ;\:\: 0 \leq x < \infty ;\:\: \beta > 0
+\end{eqnarray}
+
+### Gamma Distribution
+
+\begin{eqnarray}
+f(X=x|\alpha, \beta) &=& \frac{1}{\Gamma(\alpha) \beta^{\alpha}} x^{\alpha-1} e^{-\frac{x}{\beta}} ;\:\: 0 \leq x < \infty ;\:\: \alpha, \beta > 0
+\end{eqnarray}
+
+### Normal Distribution
+
+\begin{eqnarray}
+f(X=x|\mu, \sigma^2) &=& \frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{(x-\mu)^2}{2 \sigma^2}} ;\:\: -\infty < x < \infty ;\:\: -\infty < \mu < \infty, \sigma > 0
+\end{eqnarray}
+
+# Problem 3
+
+\begin{enumerate}
+  \item Record the way it was produced for every result. It might be challenging for me when the project is huge and complicated.
+  \item As manual procedures are hard to reproduce as well as inefficient and error-prone, it is recommended to avoid manual data manipulation steps. In order to avoid such steps, it is important to enhance my programming skills.
+  \item Record exact versions of every external programs used in the research. If there are lots of external programs in the project, it should be thoroughly examined.
+  \item Use a version control system for all custom scripts. It is important to know how to run such systems.
+  \item In standardized format, record every intermediate results. It could be challenging when there are lots of results in the research.
+  \item When there is a randomness in the analysis, record random seeds for it. It is important to track all randomness parts of the project to record their random seeds.
+  \item For visual consistency between figures, store raw data behind plots. If one data is connected to multiple plots, it is important to store it for all of connected plots.
+  \item To validate and understand the research result, it is good to inspect the summaries and generating hierarchical analysis output is useful for doing it. It is critical to know each steps of the hierachical anlysis. 
+  \item Write down textual statements to underlying results. It would be critical to write text for results such as interpretation or conclusion efficiently, i.e, to make readers easy to understand the text. 
+  \item Give public access to all scripts, runs, and results in the research. It is crucial to make public to easily access to the research.
+\end{enumerate}
+
+# Problem 4
+
+## Data
+```{r echo=FALSE}
+head(iris)
+```
+
+I use 'iris' data in R dataset.
+
+## Scatter Plot
+```{r echo=FALSE}
+plot(iris$Sepal.Length,iris$Sepal.Width,col=iris$Species,xlab="Sepal.Length",ylab="Sepal.Width",main="Scatter Plot")
+legend(7.5, 2.5, legend=c("Setosa", "Virginica", "Veriscolor"),
+       col=c("black", "green", "red"), pch=1, cex=0.7)
+```
+
+I plot 'Sepal.Length' and 'Sepal.Width' of observations in the data. 
+
+## Histogram
+```{r echo=FALSE}
+hist(iris$Petal.Length, xlab="Petal.Length", main="Histogram")
+```
+
+I draw histogram with 'Petal.Length' in the data. 
